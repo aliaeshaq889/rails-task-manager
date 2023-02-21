@@ -1,0 +1,10 @@
+<div   class="d-flex">
+   <div class="d-flex">
+    <% @tasks.each do |task| %>
+    <ul> <%= link_to task.title, task_path(task) %></ul>
+    </div>
+     <div class="d-flex">
+    <%= link_to "Delete",task_path(task),data: {turbo_method: :delete, turbo_confirm: "delete #{task.title}?"} %>
+    <% end %>
+     </div>
+</div>
